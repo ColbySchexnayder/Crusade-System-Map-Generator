@@ -1,0 +1,37 @@
+PLANET
+Sectors: 8
+Designation: Mining World, Mechanicus
+
+
+PLANET
+Sectors: 8
+Designation: Hive World, Imperialis
+
+MOONS:
+
+MOON
+Sectors: 5
+Designation: Colony Settlement
+
+
+PLANET
+Sectors: 7
+Designation: Shrine World, Imperialis
+
+
+PLANET
+Sectors: 7
+Designation: Forge World, Mechanicus
+
+MOONS:
+
+MOON
+Sectors: 4
+Designation: Archeology Site
+
+
+PLANET
+Sectors: 8
+Designation: Shrine World, Imperialis
+
+

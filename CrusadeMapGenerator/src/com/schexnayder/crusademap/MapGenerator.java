@@ -19,7 +19,6 @@ public class MapGenerator {
 		nWorlds = 2+Integer.parseInt(JOptionPane.showInputDialog("How many players?"));
 		generateWorlds(nWorlds);
 		assignMoons();
-		assignDesignation();
 		
 	}
 	
@@ -64,29 +63,6 @@ public class MapGenerator {
 		}
 	}
 	
-	public void assignDesignation() {
-		for (World w : worlds) {
-			switch(ran.nextInt(DIE)) {
-			case 0: w.designation = "Hive World, Imperialis"; break;
-			case 1: w.designation = "Shrine World, Imperialis"; break;
-			case 2: w.designation = "Forge World, Mechanicus"; break;
-			case 3: w.designation = "Mining World, Mechanicus"; break;
-			case 4: w.designation = "Research World, Exotic"; break;
-			case 5: w.designation = "Frontier World, Exotic"; break;
-			}
-			
-			for (World m : w.moons) {
-				switch(ran.nextInt(DIE)) {
-				case 0: m.designation = "Trade Port"; break;
-				case 1: m.designation = "Defense Outpost"; break;
-				case 2: m.designation = "Colony Settlement"; break;
-				case 3: m.designation = "Dead World"; break;
-				case 4: m.designation = "Archeology Site"; break;
-				case 5: m.designation = "Waste Site"; break;
-				}
-			}
-		}
-	}
 	
 	@Override
 	public String toString() {

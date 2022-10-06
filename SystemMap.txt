@@ -1,50 +1,179 @@
-LARGE_PLANET
-Sectors: 12
+PLANET
+Sectors: 9
 Climate: Desert
-Designation: Shrine World, Imperialis
+Designation: Frontier World, Exotic
+Quirks:
+Tidally Locked
+
+MOONS:
+
+MOON
+Sectors: 2
+Climate: Molten
+Designation: Archeology Site
 Quirks:
 Atmospheric Interference
-Evacuated Population
-
-
-PLANET
-Sectors: 6
-Climate: Wasteland
-Designation: Mining World, Mechanicus
+MOON
+Sectors: 5
+Climate: Frozen Wastes
+Designation: Waste Site
 Quirks:
-Volatile Tectonics
+Ancient Labyrinths
 
 
 LARGE_PLANET
 Sectors: 10
-Climate: Wasteland
+Climate: Artic
 Designation: Frontier World, Exotic
 Quirks:
-Unreliable Power Grid
-Magnetic Flux
+Historic Battleground
+Civil Unrest
+
+
+PLANET
+Sectors: 7
+Climate: Oceanic
+Designation: Mining World, Mechanicus
+Quirks:
+Tidally Locked
+
+
+PLANET
+Sectors: 7
+Climate: Swamp
+Designation: Research World, Exotic
+Quirks:
+Unsettling Ambience
 
 MOONS:
 
 MOON
 Sectors: 4
 Climate: Molten
-Designation: Archeology Site
+Designation: Trade Port
 Quirks:
-Terraformed Biosphere
+Resettled World
+
+
+NEW SYSTEM: 
+PLANET
+Sectors: 9
+Climate: Artic
+Designation: Shrine World, Imperialis
+Quirks:
+Resettled World
+
+MOONS:
+
 MOON
-Sectors: 2
+Sectors: 4
+Climate: Frozen Wastes
+Designation: Waste Site
+Quirks:
+Civil Unrest
+
+MOONS:
+
+MOON
+Sectors: 5
+Climate: Molten
+Designation: Colony Settlement
+Quirks:
+Resettled World
+MOON
+Sectors: 3
 Climate: Captured Asteroid
 Designation: Trade Port
 Quirks:
-Atmospheric Interference
+Historic Battleground
 
 
 PLANET
-Sectors: 7
+Sectors: 8
 Climate: Artic
+Designation: Shrine World, Imperialis
+Quirks:
+Resettled World
+
+MOONS:
+
+MOON
+Sectors: 3
+Climate: Frozen Wastes
+Designation: Colony Settlement
+Quirks:
+Volatile Tectonics
+
+
+PLANET
+Sectors: 8
+Climate: Desert
 Designation: Hive World, Imperialis
 Quirks:
-Unreliable Power Grid
+Unsettling Ambience
+
+
+NEW SYSTEM: 
+LARGE_PLANET
+Sectors: 10
+Climate: Swamp
+Designation: Hive World, Imperialis
+Quirks:
+Magnetic Flux
+Unreliable Maps
+
+MOONS:
+
+MOON
+Sectors: 2
+Climate: Molten
+Designation: Archeology Site
+Quirks:
+Historic Battleground
+
+
+PLANET
+Sectors: 9
+Climate: Artic
+Designation: Frontier World, Exotic
+Quirks:
+Unreliable Maps
+
+MOONS:
+
+MOON
+Sectors: 4
+Climate: Frozen Wastes
+Designation: Dead World
+Quirks:
+Exterminated Biosphere
+MOON
+Sectors: 5
+Climate: Molten
+Designation: Archeology Site
+Quirks:
+Unreliable Maps
+MOON
+Sectors: 4
+Climate: Molten
+Designation: Waste Site
+Quirks:
+Lost Xeno Relic
+MOON
+Sectors: 2
+Climate: Molten
+Designation: Waste Site
+Quirks:
+Lost Xeno Relic
+
+
+NEW SYSTEM: 
+PLANET
+Sectors: 6
+Climate: Swamp
+Designation: Hive World, Imperialis
+Quirks:
+Terraformed Biosphere
 
 MOONS:
 
@@ -53,12 +182,87 @@ Sectors: 5
 Climate: Molten
 Designation: Waste Site
 Quirks:
-Turbulent Weather
+Exterminated Biosphere
 MOON
-Sectors: 4
+Sectors: 5
 Climate: Molten
+Designation: Dead World
+Quirks:
+Turbulent Weather
+
+
+PLANET
+Sectors: 9
+Climate: Swamp
+Designation: Shrine World, Imperialis
+Quirks:
+Terraformed Biosphere
+
+
+LARGE_PLANET
+Sectors: 11
+Climate: Wasteland
+Designation: Hive World, Imperialis
+Quirks:
+Noxious Atmosphere
+Historic Battleground
+
+
+PLANET
+Sectors: 7
+Climate: Oceanic
+Designation: Mining World, Mechanicus
+Quirks:
+Terraformed Biosphere
+
+
+NEW SYSTEM: 
+PLANET
+Sectors: 9
+Climate: Swamp
+Designation: Forge World, Mechanicus
+Quirks:
+Ancient Labyrinths
+
+
+LARGE_PLANET
+Sectors: 11
+Climate: Wasteland
+Designation: Frontier World, Exotic
+Quirks:
+Civil Unrest
+Localized Warp Storms
+
+
+PLANET
+Sectors: 9
+Climate: Wasteland
+Designation: Frontier World, Exotic
+Quirks:
+Civil Unrest
+
+MOONS:
+
+MOON
+Sectors: 3
+Climate: Toxic Mire
 Designation: Trade Port
 Quirks:
-Unsettling Ambience
+Terraformed Biosphere
+MOON
+Sectors: 4
+Climate: Captured Asteroid
+Designation: Dead World
+Quirks:
+Magnetic Flux
+
+
+LARGE_PLANET
+Sectors: 12
+Climate: Swamp
+Designation: Forge World, Mechanicus
+Quirks:
+Noxious Atmosphere
+Ancient Labyrinths
 
 

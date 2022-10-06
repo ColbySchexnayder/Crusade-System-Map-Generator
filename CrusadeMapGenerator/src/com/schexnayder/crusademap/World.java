@@ -64,9 +64,11 @@ public class World {
 	}
 	
 	public void determineClimate() {
-		int roll2D3 = 2 + ran.nextInt(MapGenerator.DIE/2) + ran.nextInt(MapGenerator.DIE/2);
+		//2D3 didn't give the full range so duplicates have been removed and the
+		//roll changed to 2D4. This is a temporary fix until the design has been updated.
+		int roll2D4 = 2 + ran.nextInt(4) + ran.nextInt(4);
 		if (classification == Classification.MOON) {
-			switch (roll2D3) {
+			switch (roll2D4) {
 			case 2: climate = "Captured Asteroid"; break;
 			case 3: climate = "Molten"; break;
 			case 4: climate = "Frozen Wastes"; break;
@@ -74,19 +76,17 @@ public class World {
 			case 6: climate = "Toxic Mire"; break;
 			case 7: climate = "Captured Asteroid"; break;
 			case 8: climate = "Artificial"; break;
-			case 9: climate = "Toxic Mire"; break;
 			}
 		}
 		else {
-			switch (roll2D3) {
-			case 2: climate = "Wasteland"; break;
+			switch (roll2D4) {
+			case 2: climate = "Tropical"; break;
 			case 3: climate = "Desert"; break;
 			case 4: climate = "Artic"; break;
-			case 5: climate = "Oceanic"; break;
+			case 5: climate = "Wasteland"; break;
 			case 6: climate = "Swamp"; break;
-			case 7: climate = "Wasteland"; break;
+			case 7: climate = "Oceanic"; break;
 			case 8: climate = "Artificial"; break;
-			case 9: climate = "Tropical"; break;
 			}
 		}
 	}

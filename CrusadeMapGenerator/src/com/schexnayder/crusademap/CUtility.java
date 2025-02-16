@@ -71,6 +71,73 @@ public class CUtility {
 			{"Frontier World, Exotic",			"B"}			
 	};
 	
+	static enum factions {
+		Adeptus_Astartes,
+		Adeptus_Sororitas,
+		Adeptus_Mechanicus,
+		Astra_Militarum,
+		Inquisition,
+		Black_Legion,
+		Tzeentch,
+		Khorne,
+		Slaanesh,
+		Nurgle,
+		Craft_World,
+		Harlequinn,
+		Ynnari,
+		Drukhari,
+		Leagues_Of_Votann,
+		Nekron,
+		Ork,
+		Tau,
+		Tyranids
+	}
+	
+	static enum alliances{
+		Imperium,
+		Chaos,
+		Aeldari,
+		Xenos,
+		Generic
+	}
+	
+	static String [][] factionWorlds = {
+			{"Homeworld", "Breeding World", "Fief World", "Recruiting World"},//Adeptus_Astartes,
+			{"Sanctuary World", "Shrine World", "Archive World", "Cardinal World", "Cemetary World"},//Adeptus_Sororitas,
+			{"Forge World", "Knight World", "Mining World", "Quarry World"},//Adeptus_Mechanicus,
+			{},//Astra_Militarum,
+			{"Quarantined World"},//Inquisition,
+			{},//Black_Legion,
+			{},//Tzeentch,
+			{},//Khorne,
+			{},//Slaanesh,
+			{},//Nurgle,
+			{},//Craft_World,
+			{},//Harlequinn,
+			{},//Ynnari,
+			{"Quarry World"},//Drukhari,
+			{"Kin World", "Hold World", "Mining World", "Merchant World"},//Leagues_Of_Votann,
+			{"Crown World", "Core World", "Fringe World", "Quarry World"},//Nekron,
+			{"Ork World"},//Ork,
+			{"Homeworld", "First Phase Colony", "Second Phase Colony", "Third Phase Colony", "Fifth Phase Colony", "Sept World", "Splinter Sept World"},//Tau,
+			{"Larder World"},//Tyranids
+	};
+	
+	static String [][] allianceWorlds = {
+			/*Imperium*/{"Agri World", "Civilised World", "Feral World", "Feudal World", "Frontier World", "Fortress World", "Hive World", "Penal World", "Repository World", "Sentinal World", 
+				"Merchant World", "Battery World", "Warden World", "Astropathic Relay Station"}, //Imperium,
+			
+			/*Chaos*/{"Daemon World", "Hell Forge", "Heretic Astartes Fief World", "Heretic Astartes Recruiting World", "Fallen Knight World", "Cache World", "Crone World"}, //Chaos,
+			
+			/*Aeldari*/{"Exodite World", "Crone World", "Major Craft World", "Minor Craft World"}, //Aeldari,
+			
+			/*Xenos*/{"Warden World"}, //Xenos,
+			
+			/*Generic*/{"Dead World", "Death World", "Gas Giant", "Derelict World", "Chem World", "Mountain World", "Rad World", "Maiden World", "Industrial World", "Labyrinth World", "Paradise World",
+				"Research Station", "Relic World"},//Generic
+	};
+	
+	
 	static String [] possibleMoonDesignations = {
 			"Trade Port",
 			"Defense Outpost",

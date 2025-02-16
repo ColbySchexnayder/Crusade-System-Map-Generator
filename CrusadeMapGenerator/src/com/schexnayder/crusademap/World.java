@@ -10,121 +10,97 @@ public class World {
 
 	Classification classification = Classification.MOON;
 	int nSectors = 0;
+	int nLargeSectors = 0;
+	int tValue = 0;
+	char designationClass = ' ';
 	String designation = "";
 	String climate = "";
 	ArrayList<String> quirks = new ArrayList<String>();
 	ArrayList<World> moons = new ArrayList<World>();
 	Random ran = new Random();
-	public World(int nSectors) {
+
+	public World(int nSectors, int largeSectors) {
 		this.nSectors = nSectors;
+		this.nLargeSectors = largeSectors;
+
+		tValue = nSectors + largeSectors * 2;
+
 		assignDesignation();
 		determineClimate();
 		narrativeQuirks();
 	}
 
 	public void narrativeQuirks() {
-		int rollD3 = ran.nextInt(MapGenerator.DIE/2);
-		int rollD6 = ran.nextInt(MapGenerator.DIE);
-		switch(rollD3) {
-		case 0:
-			switch(rollD6) {
-			case 0: quirks.add("Civil Unrest"); break;
-			case 1: quirks.add("Evacuated Population"); break;
-			case 2: quirks.add("Terraformed Biosphere"); break;
-			case 3: quirks.add("Lost Xeno Relic"); break;
-			case 4: quirks.add("Atmospheric Interference"); break;
-			case 5: quirks.add("Unreliable Power Grid"); break;
-			}
-			break;
-		case 1:
-			switch(rollD6) {
-			case 0: quirks.add("Noxious Atmosphere"); break;
-			case 1: quirks.add("Localized Warp Storms"); break;
-			case 2: quirks.add("Unreliable Maps"); break;
-			case 3: quirks.add("Resettled World"); break;
-			case 4: quirks.add("Magnetic Flux"); break;
-			case 5: quirks.add("Ancient Labyrinths"); break;
-			}
-			break;
-		case 2:
-			switch(rollD6) {
-			case 0: quirks.add("Turbulent Weather"); break;
-			case 1: quirks.add("Tidally Locked"); break;
-			case 2: quirks.add("Historic Battleground"); break;
-			case 3: quirks.add("Unsettling Ambience"); break;
-			case 4: quirks.add("Exterminated Biosphere"); break;
-			case 5: quirks.add("Volatile Tectonics"); break;
-			}
-			break;
-		}
-		
-		if (classification == Classification.LARGE_PLANET && quirks.size()==1) {
+		int rollD3 = ran.nextInt(3);
+		int rollD6 = ran.nextInt(CUtility.DIE);
+
+		quirks.add(CUtility.getQuirk());
+
+		if (classification == Classification.LARGE_PLANET && quirks.size() == 1) {
 			narrativeQuirks();
 		}
 	}
-	
+
 	public void determineClimate() {
-		//2D3 didn't give the full range so duplicates have been removed and the
-		//roll changed to 2D4. This is a temporary fix until the design has been updated.
-		int roll2D4 = 2 + ran.nextInt(4) + ran.nextInt(4);
+		// 2D3 didn't give the full range so duplicates have been removed and the
+		// roll changed to 2D4. This is a temporary fix until the design has been
+		// updated.
+		int roll2D4 = ran.nextInt(4) + ran.nextInt(4);
 		if (classification == Classification.MOON) {
-			switch (roll2D4) {
-			case 2: climate = "Captured Asteroid"; break;
-			case 3: climate = "Molten"; break;
-			case 4: climate = "Frozen Wastes"; break;
-			case 5: climate = "Molten"; break;
-			case 6: climate = "Toxic Mire"; break;
-			case 7: climate = "Captured Asteroid"; break;
-			case 8: climate = "Artificial"; break;
-			}
-		}
-		else {
-			switch (roll2D4) {
-			case 2: climate = "Tropical"; break;
-			case 3: climate = "Desert"; break;
-			case 4: climate = "Artic"; break;
-			case 5: climate = "Wasteland"; break;
-			case 6: climate = "Swamp"; break;
-			case 7: climate = "Oceanic"; break;
-			case 8: climate = "Artificial"; break;
-			}
-		}
-	}
-	
-	public void assignDesignation() {
-		switch(ran.nextInt(MapGenerator.DIE)) {
-		case 0: designation = "Hive World, Imperialis"; break;
-		case 1: designation = "Shrine World, Imperialis"; break;
-		case 2: designation = "Forge World, Mechanicus"; break;
-		case 3: designation = "Mining World, Mechanicus"; break;
-		case 4: designation = "Research World, Exotic"; break;
-		case 5: designation = "Frontier World, Exotic"; break;
-		}
-		
-		if (nSectors < 6) {
-			classification = Classification.MOON;
-			
-			switch(ran.nextInt(MapGenerator.DIE)) {
-			case 0: designation = "Trade Port"; break;
-			case 1: designation = "Defense Outpost"; break;
-			case 2: designation = "Colony Settlement"; break;
-			case 3: designation = "Dead World"; break;
-			case 4: designation = "Archeology Site"; break;
-			case 5: designation = "Waste Site"; break;
-			}
-		} else if (nSectors < 10) {
-			classification = Classification.PLANET;
+			climate = CUtility.possibleMoonClimates[roll2D4];
 		} else {
-			classification = Classification.LARGE_PLANET;
+			//int planetClimate = ran.nextInt(4);
+			// TODO: Use designation class to aid with more realistic climates
+			climate = CUtility.possiblePlanetClimates[roll2D4];
 		}
 	}
-	
+
+	public void assignDesignation() {
+		int genPercent = ran.nextInt(100);
+		if (genPercent < 10) {
+			designation = "Hive World, Imperialis";
+			designationClass = 'A';
+		} else if (genPercent < 30) {
+			designation = "Agriculture World, Imperialis";
+			designationClass = 'B';
+		} else if (genPercent < 50) {
+			designation = "Civilized World, Imperialis";
+			designationClass = 'A';
+		} else if (genPercent < 60) {
+			designation = "Shrine World, Imperialis";
+			designationClass = 'A';
+		} else if (genPercent < 75) {
+			designation = "Forge World, Mechanicus";
+			designationClass = 'A';
+		} else if (genPercent < 90) {
+			designation = "Mining World, Mechanicus";
+			designationClass = 'C';
+		} else if (genPercent < 95) {
+			designation = "Dead World, Exotic";
+			designationClass = 'C';
+		} else {
+			designation = "Frontier World, Exotic";
+			designationClass = 'B';
+		}
+
+		if (tValue < 6) {
+			classification = Classification.MOON;
+			designation = CUtility.possibleDesignations[ran.nextInt(CUtility.DIE)][0];
+			designationClass = 'M';
+		} else if (nLargeSectors == 3) {
+			classification = Classification.LARGE_PLANET;
+		} else {
+			classification = Classification.PLANET;
+
+		}
+	}
+
 	@Override
 	public String toString() {
 		String s = "";
-		s += classification + "\nSectors: " + nSectors + "\nClimate: " + climate 
+		s += classification + "\nSectors: " + nSectors + "\nLarge Sectors: " + nLargeSectors + "\nClimate: " + climate
 				+ "\nDesignation: " + designation + "\nQuirks:\n";
-		
+
 		for (String q : quirks) {
 			s += q + "\n";
 		}

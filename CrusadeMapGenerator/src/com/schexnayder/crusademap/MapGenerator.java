@@ -1,6 +1,7 @@
 package com.schexnayder.crusademap;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 import javax.swing.JOptionPane;
@@ -8,13 +9,12 @@ import javax.swing.JOptionPane;
 import com.schexnayder.crusademap.World.Classification;
 
 public class MapGenerator {
-	final static int DIE = 6;
+	
 	int nWorlds = 0;
 	ArrayList<World> worlds = new ArrayList<World>();
 	Random ran = new Random();
 	
 	public MapGenerator() {
-		
 		//There should be 2 + nPlayer worlds including moons
 		nWorlds = 2+Integer.parseInt(JOptionPane.showInputDialog("How many players?"));
 		generateWorlds(nWorlds);
@@ -26,17 +26,13 @@ public class MapGenerator {
 	public void generateWorlds(int nPlayers) {
 		for (int i = 0; i < nWorlds; i++) {
 			//Generate number of Sectors
-			int roll = ran.nextInt(DIE) + ran.nextInt(DIE) + 2;
+			int sectors = ran.nextInt(5) + 3;
+			int largeSectors = ran.nextInt(4);
 			
-			World world = new World(roll);
+			World world = new World(sectors, largeSectors);
 			
-			//Destroy planet on bad roll
-			if (ran.nextInt(DIE) == 0) {
-				continue;
-			}
-			else {
-				worlds.add(world);
-			}
+			worlds.add(world);
+			
 		}
 	}
 	

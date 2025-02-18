@@ -6,20 +6,35 @@ import java.util.Random;
 
 import javax.swing.JOptionPane;
 
+import com.schexnayder.crusademap.CUtility.*;
 import com.schexnayder.crusademap.World.Classification;
 
 public class MapGenerator {
 	
 	int nWorlds = 0;
+	int nPlayers = 0;
+	int mapSize = 0; //0.Only War: No gaps between players //1.Eternal Crusade: Players only get one starting planet and have small gaps between them //2. Space Opera: Player's get three starting planets and a large map between them
 	ArrayList<World> worlds = new ArrayList<World>();
+	ArrayList<Player> players = new ArrayList<Player>();
 	Random ran = new Random();
 	
 	public MapGenerator() {
+		
+		nPlayers = Integer.parseInt(JOptionPane.showInputDialog("How many players?"));
+		
+		
 		//There should be 2 + nPlayer worlds including moons
-		nWorlds = 2+Integer.parseInt(JOptionPane.showInputDialog("How many players?"));
+		nWorlds = 2+nPlayers;
 		generateWorlds(nWorlds);
 		assignMoons();
 		
+	}
+	
+	public MapGenerator(ArrayList<Player> playerList) {
+		players = playerList;
+		for (Player p : players) {
+			
+		}
 	}
 	
 	//Generate worlds

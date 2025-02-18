@@ -64,3 +64,62 @@ Quirks:
 Historic Battleground
 
 
+NEW SYSTEM: 
+LARGE_PLANET
+Sectors: 5
+Large Sectors: 3
+Climate: Desert
+Designation: Forge World, Mechanicus
+Quirks:
+Terraformed Biosphere
+Turbulent Weather
+
+
+PLANET
+Sectors: 7
+Large Sectors: 0
+Climate: Artic
+Designation: Agriculture World, Imperialis
+Quirks:
+Ancient Labyrinths
+
+
+LARGE_PLANET
+Sectors: 7
+Large Sectors: 3
+Climate: Artic
+Designation: Hive World, Imperialis
+Quirks:
+Localized Warp Storms
+Lost Xeno Relic
+
+
+LARGE_PLANET
+Sectors: 3
+Large Sectors: 3
+Climate: Artic
+Designation: Hive World, Imperialis
+Quirks:
+Civil Unrest
+Unreliable Maps
+
+
+PLANET
+Sectors: 7
+Large Sectors: 0
+Climate: Oceanic
+Designation: Agriculture World, Imperialis
+Quirks:
+Exterminated Biosphere
+
+MOONS:
+
+MOON
+Sectors: 4
+Large Sectors: 0
+Climate: Captured Asteroid
+Designation: Civilized World, Imperialis
+Quirks:
+Magnetic Flux
+
+

@@ -29,11 +29,13 @@ public class World {
 		determineClimate();
 		narrativeQuirks();
 	}
+	
+	public World(int nSectors, int largeSectors, String[] designationArray) {
+		
+	}
 
 	public void narrativeQuirks() {
-		int rollD3 = ran.nextInt(3);
-		int rollD6 = ran.nextInt(CUtility.DIE);
-
+		
 		quirks.add(CUtility.getQuirk());
 
 		if (classification == Classification.LARGE_PLANET && quirks.size() == 1) {

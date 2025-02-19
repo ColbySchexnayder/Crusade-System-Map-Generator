@@ -1,10 +1,5 @@
 package com.schexnayder.crusademap;
 
-import java.io.FileWriter;
-import java.io.IOException;
-
-import javax.swing.JOptionPane;
-
 public class Runner {
 
 	public static void main(String[] args) {

@@ -1,12 +1,10 @@
 package com.schexnayder.crusademap;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Random;
 
 import javax.swing.JOptionPane;
 
-import com.schexnayder.crusademap.CUtility.*;
 import com.schexnayder.crusademap.World.Classification;
 
 public class MapGenerator {
@@ -30,10 +28,26 @@ public class MapGenerator {
 		
 	}
 	
-	public MapGenerator(ArrayList<Player> playerList) {
+	public MapGenerator(ArrayList<Player> playerList, int gameSize) {
 		players = playerList;
+		mapSize = gameSize;
 		for (Player p : players) {
+			int sectors = ran.nextInt(3) + ran.nextInt(3) + 3;
+			int largeSectors = ran.nextInt(4);
 			
+			World world = new World(sectors, largeSectors, p, 0);
+			p.startingWorld = world;
+			
+			
+			switch (gameSize) {
+			case 0:
+				break;
+			case 1:
+				break;
+			case 2:
+				break;
+					
+			}
 		}
 	}
 	
@@ -41,7 +55,7 @@ public class MapGenerator {
 	public void generateWorlds(int nPlayers) {
 		for (int i = 0; i < nWorlds; i++) {
 			//Generate number of Sectors
-			int sectors = ran.nextInt(5) + 3;
+			int sectors = ran.nextInt(3) + ran.nextInt(3) + 3;
 			int largeSectors = ran.nextInt(4);
 			
 			World world = new World(sectors, largeSectors);

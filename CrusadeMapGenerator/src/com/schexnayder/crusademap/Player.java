@@ -1,6 +1,7 @@
 package com.schexnayder.crusademap;
 
-import com.schexnayder.crusademap.CUtility.*;
+import com.schexnayder.crusademap.CUtility.Alliances;
+import com.schexnayder.crusademap.CUtility.Factions;
 
 public class Player {
 	String name;

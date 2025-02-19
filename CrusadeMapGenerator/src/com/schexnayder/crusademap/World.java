@@ -4,11 +4,15 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class World {
+	
 	static enum Classification {
 		MOON, PLANET, LARGE_PLANET
 	}
 
 	Classification classification = Classification.MOON;
+	int layer = 0;
+	Player originator;
+	
 	int nSectors = 0;
 	int nLargeSectors = 0;
 	int tValue = 0;
@@ -30,7 +34,7 @@ public class World {
 		narrativeQuirks();
 	}
 	
-	public World(int nSectors, int largeSectors, String[] designationArray) {
+	public World(int nSectors, int largeSectors, Player origin, int layer) {
 		
 	}
 
